@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0185C80D1EABC0F0007A15A9 /* Prova.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0185C80C1EABC0F0007A15A9 /* Prova.swift */; };
 		2EF6DF654DD270F70E632B69 /* Pods_W1NUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7183199D9165DA5BCED4867 /* Pods_W1NUITests.framework */; };
 		461EF00D1E9DAF82000088B8 /* TuoiAnnunciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461EF00C1E9DAF82000088B8 /* TuoiAnnunciView.swift */; };
 		463ED2461E9D4BCF00234FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463ED2451E9D4BCF00234FDE /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0185C80C1EABC0F0007A15A9 /* Prova.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prova.swift; sourceTree = "<group>"; };
 		13E56090563123218DC6BE31 /* Pods-W1NUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W1NUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-W1NUITests/Pods-W1NUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1423A2C7E1AC8F995C9C5A84 /* Pods-W1N.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-W1N.release.xcconfig"; path = "Pods/Target Support Files/Pods-W1N/Pods-W1N.release.xcconfig"; sourceTree = "<group>"; };
 		2E30A25D6AC69C2704D2D688 /* Pods_W1N.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_W1N.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				46623C6E1E9EF9E3003B084E /* PrimaCellaMieiAnnunci.swift */,
+				0185C80C1EABC0F0007A15A9 /* Prova.swift */,
 			);
 			name = IMieiAnnunciCells;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				463ED2461E9D4BCF00234FDE /* AppDelegate.swift in Sources */,
 				46623C6F1E9EF9E3003B084E /* PrimaCellaMieiAnnunci.swift in Sources */,
 				463ED27A1E9D517900234FDE /* LoginFacebookButton.swift in Sources */,
+				0185C80D1EABC0F0007A15A9 /* Prova.swift in Sources */,
 				46623C711E9F0624003B084E /* CercaAnnunciView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
