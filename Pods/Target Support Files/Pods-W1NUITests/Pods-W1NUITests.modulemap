@@ -1,0 +1,6 @@
+framework module Pods_W1NUITests {
+  umbrella header "Pods-W1NUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

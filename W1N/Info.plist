@@ -41,5 +41,32 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb506056513118484</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>506056513118484</string>
+    <key>FacebookDisplayName</key>
+    <string>W1N</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Per ora non servono foto</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>googlechromes</string>
+        <string>comgooglemaps</string>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Allow location</string>
 </dict>
 </plist>
