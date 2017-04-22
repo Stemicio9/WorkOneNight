@@ -187,6 +187,7 @@
 			children = (
 				46623C6E1E9EF9E3003B084E /* PrimaCellaMieiAnnunci.swift */,
 				0185C80C1EABC0F0007A15A9 /* Prova.swift */,
+				46FE007D1EABC0EA00ECB038 /* ProvaConflitto1.swift */,
 			);
 			name = IMieiAnnunciCells;
 			sourceTree = "<group>";
