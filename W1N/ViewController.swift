@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate{
+class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate{
 
     @IBOutlet var Username: UITextField!
     
@@ -23,9 +23,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
     
 
     
+    
+    
+    
+    
+    // Questa è la view di tipo FBSDKLoginButton che nella storyboard è un rettangolo colorato 
     @IBOutlet var FacebookLoginButton: FBSDKLoginButton!
 
-   
+    //Funzione del login di facebook
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!)
     {
         
@@ -47,8 +52,27 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-      
-        
+        //Inserire la gestione del tap alla label di registrazione
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.registrazione))
+        RegistrationLabel.isUserInteractionEnabled = true
+        RegistrationLabel.addGestureRecognizer(tapGesture)
+        Username.delegate = self
+        Password.delegate = self
+        UserPassword.delegate = self
+   //     Username.keyboardType = UIKeyboardType.TIPODITASTIERA per aprire la tastiera come serve
+    }
+    
+    
+    // Questa è la funzione che permette di far chiudere la tastiera premendo invio, va accompagnata delegando alla vista gli oggetti che chiamano l'apertura della tastiera
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
+    //Funzione chiamata quando viene cliccata la label di registrazione
+    func registrazione(){
+        self.performSegue(withIdentifier: "SegueLoginRegistration", sender: self)
     }
 
 

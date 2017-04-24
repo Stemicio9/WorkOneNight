@@ -8,9 +8,12 @@
 
 import UIKit
 
-class TuoiAnnunciView: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
+class TuoiAnnunciView: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet var BarraDiRicerca: UISearchBar!
+    
+    @IBOutlet weak var ListaAnnunci: UITableView!
+    
     
     var annunci = ["Cerco Cameriere", "Cerco Cuoco", "Cerco Saldatore", "Cerco Venditore",
         "Cerco Giardiniere", "Cerco sommelier", "Royal Oak", "CASK Pub and Kitchen"]
@@ -20,9 +23,53 @@ class TuoiAnnunciView: UIViewController,UITableViewDataSource,UITableViewDelegat
 
         BarraDiRicerca.delegate = self
         
+     
+        ListaAnnunci.estimatedRowHeight = 80
+        
+        
+    
+        
+      //  ListaAnnunci.register(UINib(nibName:"CellAggiungiAnnuncio",bundle:nil), forCellReuseIdentifier: "cellAggiungiAnnuncio")
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    // Qua c'è la funzione che fa apparire il popover
+    
+    @IBAction func PopoverAggiungiAnnuncio(_ sender: UIButton) {
+        
+        // get a reference to the view controller for the popover
+        let popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopoverAggiungiAnnuncio")
+        
+        // set the presentation style
+        popController.modalPresentationStyle = UIModalPresentationStyle.popover
+        
+        // set up the popover presentation controller
+        popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+        popController.popoverPresentationController?.delegate = self
+        popController.popoverPresentationController?.sourceView = sender as UIView // button
+        popController.popoverPresentationController?.sourceRect = sender.bounds
+        
+        // present the popover
+        self.present(popController, animated: true, completion: nil)
+        
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        // return UIModalPresentationStyle.FullScreen
+        return UIModalPresentationStyle.none
+    }
+    
+    
 
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,28 +83,53 @@ class TuoiAnnunciView: UIViewController,UITableViewDataSource,UITableViewDelegat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->
         Int {
             // Return the number of rows in the section.
-         
             return annunci.count
+            
+            
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 0 {
+            return 77
+        }
+        else {
+            return UITableViewAutomaticDimension
+        }
+        
     }
     
     
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
 
-         
+      
+            
+            if indexPath.row == 0 {
+                
+               
+              //  let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "aggiungiAnnuncioCell")
+                let cell = ListaAnnunci.dequeueReusableCell(withIdentifier: "aggiungiAnnuncioCell", for: indexPath) as! AggiungiAnnuncioCell
+              
+                
+                return cell
+            }
+            
+            else {
       
        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
                 //set the data here
              
-            
-            
+                
             
             // Configure the cell...
             
                 cell.textLabel?.text = annunci[indexPath.row]
-
             
-            return cell
+                return cell
+            }
+            
+            
     }
     
 
